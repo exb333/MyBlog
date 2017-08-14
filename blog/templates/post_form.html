@@ -1,12 +1,49 @@
 {% extends "base.html" %}
 
+
 {% block style %}
     <style>
 
-        .form input[type=submit] {
-                width: 20%;
-            margin-left:2%;
+        .recent-posts {
+            height:auto;
+            min-height: 80vh;
             }
+            p {
+         width: auto;
+         word-break: normal;
+    }
+
+        .myform input[type=text]        {
+            width: 850px;
+            margin-left:20px
+            }
+
+        .mybtn
+        {
+            width: 150px;
+            margin-left:100px;
+            margin-top: 40px;
+            background-color: #96281B;
+            height: 50px;
+            color: #fff;
+            border-radius: 20px;
+            }
+
+        #id_content {
+            width:850px;
+            height: 350px;
+            padding: 20px;
+
+        }
+
+        #id_title {
+            margin-left: 30px;
+            margin-bottom: 40px;
+        }
+
+        .myform label {
+            padding: 10px;
+        }
     </style>
 
 {% endblock %}
@@ -14,7 +51,7 @@
 
 {% block content %}
 <h1>Form</h1>
-<form method="post" action="" class="form">{% csrf_token %}
+<form method="post" action="" class="myform">{% csrf_token %}
     {{ form.as_p }}
 <input type="submit" value="create post" class="mybtn"/>
 </form>

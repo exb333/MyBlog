@@ -15,6 +15,7 @@
 }
         small {
             font-size: 40%;
+            margin-left: 20px;
         }
 
     </style>
@@ -35,9 +36,7 @@
 
 <h1>{{ instance.title }}<small> {{ instance.timestamp }} </small></h1>
     <p>{{ instance.content|linebreaks }}</p><br/>
-    {{ instance.updated }}<br/>
-    <br/>
-    {{ instance.id }}<br/><br/><br/>
+
 
 {% endblock %}
 
