@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+
+{% block style %}
+
+    <style>
+
+        .recent-posts {
+            height:auto;
+            min-height: 80vh;
+        }
+        p {
+     width: auto;
+     word-break: normal;
+}
+        small {
+            font-size: 40%;
+        }
+
+    </style>
+
+{% endblock %}
+
+
+{% block content %}
+{% if messages %}
+
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+<h1>{{ instance.title }}<small> {{ instance.timestamp }} </small></h1>
+    <p>{{ instance.content|linebreaks }}</p><br/>
+    {{ instance.updated }}<br/>
+    <br/>
+    {{ instance.id }}<br/><br/><br/>
+
+{% endblock %}
+
+{% block other %}
+
+{% endblock %}
+
+
+</body>
+</html>

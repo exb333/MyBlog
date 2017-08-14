@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block style %}
+    <style>
+
+        .form input[type=submit] {
+                width: 20%;
+            margin-left:2%;
+            }
+    </style>
+
+{% endblock %}
+
+
+{% block content %}
+<h1>Form</h1>
+<form method="post" action="" class="form">{% csrf_token %}
+    {{ form.as_p }}
+<input type="submit" value="create post" class="mybtn"/>
+</form>
+{% endblock %}
+
+{% block other %}
+
+{% endblock %}

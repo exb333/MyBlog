@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block style %}
+
+    <style>
+        .recent-posts {
+            height:auto;
+        }
+        p {
+     width: auto;
+     word-break: normal;
+}
+        small {
+            margin-left: 20px;
+            font-size: 40%;
+            text-transform: lowercase;
+        }
+
+        .div-wide{
+            border: 2px solid #555;
+            padding: 2em;
+            margin-bottom: 1em;
+        }
+
+
+        .title:link,
+        .title:visited {
+            text-decoration: none;
+            color: #555;
+            font-weight: 300;
+            transition: 0.3s;
+
+}
+
+        .title:hover,
+        .title:active {
+        text-decoration: underline;
+        color: #6b1c13;
+}
+
+        .view:link,
+        .view:visited {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #555;
+            font-size: 90%;
+            padding: 10px;
+            font-weight: 300;
+            background-color: #96281B;
+            transition: 0.3s;
+
+}
+
+        .view:hover,
+        .view:active {
+    background-color: #6b1c13;
+}
+        .update {
+            padding-top:50px;
+            font-size:80%;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+{% if messages %}
+
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+{% for obj in object_list %}
+<div class="container div-wide">
+    <h1><a href="{{obj.get_absolute_url}}" class="title">{{ obj.title }}</a><small> published: {{ obj.timestamp|timesince }} </small></h1> <br/>
+    {{ obj.content|linebreaks|truncatechars:150 }}<br/>
+    <br/><br/><br/>
+
+    <a href="{{obj.get_absolute_url}}" class="view">View Post</a>
+    <br/>
+    <p class="update">Last Updated: {{ obj.updated }}</p>
+</div>
+{% endfor %}
+
+{% endblock %}
+
+{% block other %}
+
+{% endblock %}
+
+</body>
+</html>

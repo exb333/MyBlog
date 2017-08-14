@@ -1,0 +1,126 @@
+/*
+320px
+480px
+600px
+768px
+900px
+1024px
+1200px*/
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px){
+    
+    body { font-size: 18px;}
+    
+    .container {
+        width: 100%;
+    }
+    
+    .logo {
+        width:120px;
+        height:auto;
+        margin-top: 8px;
+        margin-left: 2%;
+    }
+    
+    .mainNav {
+        margin-right: 3%;
+    }
+ 
+    input[type=text] {
+   margin-left: 2%;
+    width: 75%;
+
+}
+    h1 { 
+        margin-left: 2%; 
+        font-size:150%;
+    }
+    
+    .form { 
+        margin-left: 10%;
+    }
+    
+    input[type=submit] {
+    width: 15%;
+}
+}
+
+@media only screen and (max-width: 800px) {
+    .col-1-2 {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    
+    body { font-size: 16px;}
+    
+    .container {
+        width: 100%;
+    }
+    
+    .logo {
+        width:110px;
+        height:auto;
+        margin-top: 8px;
+        margin-left: 2%;
+    }
+    
+    input[type=text] {
+   margin-left: 2%;
+    width: 75%;
+
+}
+    h1 { 
+        margin-left: 2%; 
+        font-size:150%;
+    }
+    
+    .form { 
+        margin-left: 10%;
+    }
+    
+    input[type=submit] {
+    width: 15%;
+}
+    
+}
+
+@media only screen and (max-width: 655px) {
+    body { font-size: 14px;}
+    
+    .container {
+        width: 100%;
+    }
+    
+    .mainNav {
+        margin-right: 3%;
+    }
+    
+    .logo {
+        width:90px;
+        height:auto;
+        margin-top: 8px;
+        margin-left: 2%;
+    }
+    
+    input[type=text] {
+   margin-left: 2%;
+    width: 80%;
+
+}
+    h1 { 
+        margin-left: 2%; 
+        font-size:150%;
+    }
+    
+    .form { 
+        margin-left: 10%;
+    }
+    
+    input[type=submit] {
+    width: 15%;
+}
+}

@@ -1,0 +1,149 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css">
+         <link rel="stylesheet" type="text/css" href="{% static 'css/ionicons.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/blog_style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/media_queries.css' %}">
+        <link type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+        {% block style %} {% endblock %}
+        
+        
+        <title>Blog</title>
+    
+    </head>
+    
+    <body>
+        <div class="top-line">
+            <p style="font-size: 60%;">Welcome to my Website</p>
+        <div class="container" >
+            <nav>
+                <a href="#"><img src="{% static 'img/mylogo1.png' %}" class="logo"/></a>
+                <ul class="mainNav">
+                    <li><a href="{% url 'posts:home' %}">Home</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="{% url 'posts:list' %}">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+        </div>
+        
+        <div class="container">
+            <div class="search-bar">
+                   <input type="text" name='q'/>
+                   <input type="submit" value="Search" class="btn-search">
+               </div>
+         </div>
+
+
+        <section class="recent-posts">
+            <div class="container">
+                {% block content %}
+                <h1> Most Recent </h1>
+                {% endblock %}
+            </div>
+                
+        </section>
+
+
+        {% block other %}
+        <section class="blog-categories">
+            <div class="container">
+                <h1> Blog categories </h1>
+                
+                <div class="col-1-2">
+                    <figure class="box" >
+                        <a href="#"><img src="{% static 'img/1.jpg' %}"/></a>
+                        <figcaption>USCIS NEWS</figcaption>
+                    </figure>
+                </div>
+                <div class="col-1-2">
+                    <figure class="box" id="scroll">
+                        <a href="#"><img src="{% static 'img/2.jpg' %}"/></a>
+                        <figcaption>Python Queries</figcaption>
+                    </figure>
+                </div>
+                <div class="col-1-2">
+                    <figure class="box">
+                        <a href="#"><img src="{% static 'img/3.jpg' %}"/></a>
+                        <figcaption>New Technologies</figcaption>
+                    </figure>
+                </div>
+                <div class="col-1-2">
+                    <figure class="box">
+                        <a href="#"><img src="{% static 'img/4.jpg' %}"/></a>
+                        <figcaption>Web Development Tricks</figcaption>
+                    </figure>
+                </div>
+                
+            </div>
+                
+        </section>
+        
+        <section class="register">
+            <div class="container">
+                <h2>Please register here!</h2>
+                
+                <form action="/action_page.php" class="form">
+                  First name :<br>
+                  <input type="text" name="firstname">
+                  <br>
+                  Last name :<br>
+                  <input type="text" name="lastname" value="">
+                    <br>
+                  Email :<br>
+                  <input type="text" name="email" value="">
+                  <br><br>
+                  <input class= "btn mybtn" type="submit" value="Submit">
+                </form> 
+
+            </div>        
+        </section>
+
+        {% endblock %}
+
+            <footer id="footer">
+                <div class="container">
+                    <div class="left-foot">
+                        <ul class="footer-nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">New Posts</a></li>
+                            <li><a href="#">Categories</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                        </ul>
+                    </div>
+                    
+
+                    <div class="right-foot">
+                        <ul class="icons">
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                             <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                             <li><a href="#"><i class="ion-social-github"></i></a></li>
+                        </ul>
+                    </div>
+
+                    
+                    <p class="copy">&copy; 2017 Eliezer </p>
+                    
+                </div>
+                
+            </footer>
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/velocity.min.js' %}"></script>
+        <script src="{% static 'js/test.js' %}" type=text/javascript></script>
+        
+    </body>
+
+</html>
