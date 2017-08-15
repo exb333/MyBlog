@@ -106,14 +106,12 @@ input[type=text] {
 
 }
 
-input[type=submit] {
+.btn-search {
     width: 10%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 1px solid #555;
-    background-color: #fff;
-    color: #555;
     font-size: 90%;
     border-radius: 10px;
     font-weight: 300;
@@ -123,7 +121,7 @@ input[type=submit] {
 
 }
 
-input[type=submit]:hover {
+.btn-search:hover {
     background-color: #6b1c13;
 }
 
@@ -145,6 +143,11 @@ h1 {
     word-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 1em;
+}
+
+p {
+     width: 10%;
+     word-break: break-all;
 }
 
 /*--------------BLOG CATEGORIES SECTION-------------*/
@@ -189,7 +192,7 @@ h2 {
     margin-top: 3em;
 }
 
-.form input[type=submit] {
+.btn {
     margin-left: 35%;
     width: 15%;
 
@@ -202,7 +205,6 @@ footer {
     height: 15vh;
     font-size: 0.7em;
     display:block;
-/*    position: fixed;*/
 }
 
 .footer-nav {
@@ -213,7 +215,7 @@ footer {
     display:inline-block;
 }
 
-.footer-nav li a:link, 
+.footer-nav li a:link,
 .footer-nav li a:visited {
     color:#fff;
     padding: 2em 1em 0em 1em;

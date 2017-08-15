@@ -205,8 +205,6 @@ footer {
     height: 15vh;
     font-size: 0.7em;
     display:block;
-    position: fixed;
-    top: 50%;
 }
 
 .footer-nav {
@@ -217,7 +215,7 @@ footer {
     display:inline-block;
 }
 
-.footer-nav li a:link, 
+.footer-nav li a:link,
 .footer-nav li a:visited {
     color:#fff;
     padding: 2em 1em 0em 1em;
@@ -233,7 +231,7 @@ footer {
     color: #fff;
 }
 
-.right-foot{float:right; width: 30%; margin-bottom: 50px; display: inline;}
+.right-foot{float:right; width: 30%;}
 .ion-social-facebook {color: #fff;}
 
 
@@ -241,7 +239,7 @@ footer {
     border: 1px solid #949792;
 	border-radius: 50%;
 	color: #fff;
-	display: inline;
+	display: inline-block;
 	height: 42px;
 	margin-left: 10px;
 	margin-right: 10px;
