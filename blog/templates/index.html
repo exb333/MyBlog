@@ -49,18 +49,28 @@
             font-size: 90%;
             padding: 10px;
             font-weight: 300;
-            background-color: #96281B;
+            background-color: #16a085;
             transition: 0.3s;
 
 }
-
+/* */
         .view:hover,
         .view:active {
-    background-color: #6b1c13;
+    background-color: #12806B;
 }
         .update {
             padding-top:50px;
             font-size:60%;
+        }
+
+        .pagination{
+            margin-bottom: 20px;
+        }
+
+        .image-responsive {
+            width:50%;
+            height: auto;
+            margin-bottom:10px;
         }
 
     </style>
@@ -79,17 +89,50 @@
 
 {% endif %}
 
+{% if no_results %}
+
+{{ no_results }}
+
+{% endif %}
+
 {% for obj in object_list %}
 <div class="container div-wide">
     <h1><a href="{{obj.get_absolute_url}}" class="title">{{ obj.title }}</a><small> published: {{ obj.timestamp|timesince }} </small></h1> <br/>
+
+    {% if obj.user.get_full_name %}
+    <p style="margin-bottom: 20px;">Posted By: {{ obj.user.get_full_name }}</p>
+    {% endif %}
+
+    {% if obj.image %}
+    <img src='{{ obj.image.url }}' class="image-responsive"/><br/>
+    {% endif %}
+
     {{ obj.content|linebreaks|truncatechars:150 }}<br/>
-    <br/><br/><br/>
+    <br/>
 
     <a href="{{obj.get_absolute_url}}" class="view">View Post</a>
     <br/>
     <p class="update">Last Updated: {{ obj.updated }}</p>
 </div>
 {% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">next</a>
+        {% endif %}
+    </span>
+</div>
+
+
 
 {% endblock %}
 

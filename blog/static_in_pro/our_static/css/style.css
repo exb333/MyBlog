@@ -1,0 +1,265 @@
+/*COLOR =  #96281B*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear:both;
+}
+
+body {
+
+    font-family:  'Raleway', 'Arial', sans-serif;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.row {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.top-line {
+
+    background-color: #16a085;
+    color: #fff;
+    content: "";
+    height:5.5em;
+    text-align: center;
+}
+
+section {
+    margin-top: 2em;
+    padding-top: 1em;
+}
+
+
+/*--------------NAVBAR-------------*/
+
+
+.mainNav {
+    list-style: none;
+    float:right;
+    margin-top: 39px;
+    margin-bottom: 50px;
+}
+
+.mainNav li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.mainNav li a:link,
+.mainNav li a:visited {
+    font-size: 0.85em;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 2px 2px;
+    color: #fff;
+    transition: border-bottom 0.2s;
+}
+
+.mainNav li a:hover,
+.mainNav li a:active{
+    border-bottom: 2px solid #fff;
+}
+
+
+.logo {
+    height:auto;
+    width: 150px;
+    float:left;
+/*    margin-top: 20px;*/
+}
+
+/*--------------Search Bar-------------*/
+
+.search-bar {
+    clear: both;
+    margin: 30px 0px;
+}
+
+input[type=text] {
+    width: 85%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    background-color: #fff;
+    color: #555;
+    font-size: 90%;
+    font-weight: 300;
+    -webkit-transition: 0.5s;
+    transition: 0.2s;
+
+}
+
+.btn-search {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    font-size: 90%;
+    border-radius: 10px;
+    font-weight: 300;
+    background-color: #96281B;
+    color:#fff;
+    transition: 0.3s;
+
+}
+
+.btn-search:hover {
+    background-color: #6b1c13;
+}
+
+input[type=text]:focus {
+    border: 1px solid #65a0e5;
+}
+
+/*--------------RECENT POSTS SECTION-------------*/
+
+.recent-posts {
+    height: 70vh;
+    background-color: rgba(209, 130, 120, 0.26);
+}
+
+
+h1 {
+    font-weight: 300;
+    letter-spacing: 3px;
+    word-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+p {
+     width: 10%;
+     word-break: break-all;
+}
+
+/*--------------BLOG CATEGORIES SECTION-------------*/
+
+.col-1-2 {
+    width: 50%;
+    float: left;
+    display: block;
+    overflow-x: hidden;
+}
+
+.col-1-2:last-child{
+    margin-bottom: 4em;
+}
+
+.box { padding: 1%;}
+
+.box img {
+    width:100%;
+    height: auto;
+}
+
+figcaption { text-align: center;}
+
+/*--------------REGISTER SECTION-------------*/
+
+.register {
+    clear:both;
+    height:60vh;
+    background-color: rgba(41, 128, 185, 0.17);
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 250%;
+    letter-spacing: 0.1em;
+    word-spacing: 0.1em;
+    text-align: center;
+}
+
+.form {
+    margin-top: 3em;
+}
+
+.btn {
+    margin-left: 35%;
+    width: 15%;
+
+}
+
+.mybtn{
+
+    border: 1px solid #555;
+    font-size: 90%;
+    border-radius: 10px;
+    font-weight: 300;
+    background-color: #96281B;
+    color:#fff;
+    transition: 0.3s;
+    padding: 12px 20px;
+
+}
+
+.mybtn:hover {
+    background-color: #6b1c13;
+}
+
+/*--------------FOOTER-------------*/
+
+footer {
+    background-color:  #96281B;
+    height: 15vh;
+    font-size: 0.7em;
+    display:block;
+}
+
+.footer-nav {
+    list-style: none;
+}
+
+.footer-nav li {
+    display:inline-block;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited {
+    color:#fff;
+    padding: 2em 1em 0em 1em;
+}
+
+.left-foot {
+    padding-top: 2em;
+    width: 60%;
+}
+
+.copy {
+    margin-top: 4em;
+    color: #fff;
+}
+
+.right-foot{float:right; width: 30%;}
+.ion-social-facebook {color: #fff;}
+
+
+.icons li a{
+    /*border: 1px solid #949792;*/
+	/*border-radius: 50%;*/
+	color: #fff;
+	display: inline;
+	/*height: 42px;*/
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 10px;
+	width: 42px;
+}

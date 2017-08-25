@@ -1,0 +1,9 @@
+*.pyc
+.idea
+Lib, Scripts
+Lib
+Scripts
+.cfg
+*.cfg
+*.pyc
+*.pyc

@@ -14,7 +14,7 @@
 }
 
 body {
-    
+
     font-family:  'Raleway', 'Arial', sans-serif;
     font-size: 20px;
     text-rendering: optimizeLegibility;
@@ -32,8 +32,8 @@ body {
 }
 
 .top-line {
-    
-    background-color: #96281B;
+
+    background-color: #16a085;
     color: #fff;
     content: "";
     height:5.5em;
@@ -198,6 +198,23 @@ h2 {
 
 }
 
+.mybtn{
+
+    border: 1px solid #555;
+    font-size: 90%;
+    border-radius: 10px;
+    font-weight: 300;
+    background-color: #96281B;
+    color:#fff;
+    transition: 0.3s;
+    padding: 12px 20px;
+
+}
+
+.mybtn:hover {
+    background-color: #6b1c13;
+}
+
 /*--------------FOOTER-------------*/
 
 footer {
@@ -236,11 +253,11 @@ footer {
 
 
 .icons li a{
-    border: 1px solid #949792;
-	border-radius: 50%;
+    /*border: 1px solid #949792;*/
+	/*border-radius: 50%;*/
 	color: #fff;
-	display: inline-block;
-	height: 42px;
+	display: inline;
+	/*height: 42px;*/
 	margin-left: 10px;
 	margin-right: 10px;
 	padding: 10px;

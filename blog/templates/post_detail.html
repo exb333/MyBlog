@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block style %}
 
     <style>
@@ -10,13 +9,74 @@
             min-height: 80vh;
         }
         p {
-     width: auto;
-     word-break: normal;
+             width: auto;
+             word-break: normal;
+            text-align: justify;
+            margin-bottom: 25px;
+            font-family: "Calibri", "Arial", sans-serif;
+            font-weight: 300;
+            font-size: 1.1em;
+            line-height: 1.4em;
 }
         small {
             font-size: 40%;
             margin-left: 20px;
         }
+
+        .image-responsive {
+            margin-top: 50px;
+            width:100%;
+            height: auto;
+            margin-bottom:40px;
+            border: 1px solid #555;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+
+
+        .ion {
+                padding: 20px;
+              font-size: 30px;
+              text-align: center;
+              text-decoration: none;
+              margin: 5px 2px;
+              border-radius: 50%;
+        }
+
+
+
+
+        .ion-social-reddit {
+             background: #ff5700;
+            color: white;
+             width: 70px;
+        }
+        .face{
+            background: #3B5998;
+            color: white;
+            width: 70px;
+        }
+
+        .ion-social-twitter{
+             background: #55ACEE;
+            color: white;
+             width: 70px;
+        }
+
+        .ion-social-googleplus {
+          background: #dd4b39;
+          color: white;
+             width: 70px;
+}
+
+        .linked {
+          background: #007bb5;
+          color: white;
+             width: 70px;
+        }
+
+
+
 
     </style>
 
@@ -35,6 +95,35 @@
 {% endif %}
 
 <h1>{{ instance.title }}<small> {{ instance.timestamp }} </small></h1>
+{% if instance.user.get_full_name %}
+<p>Posted By: {{ instance.user.get_full_name }}</p>
+{% endif %}
+<!--to share the link use {{ request.build_absolute_uri }}
+this will pick up the url of the current post -->
+
+<!-- THis will share the content {{ share_string }} check views for it-->
+
+<a  class= "ion ion-social-facebook face" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+</a>
+                                            <!-- you can use this too instance.content|urlify-->
+<a class= "ion ion-social-twitter" href="https://twitter.com/home?status={{ share_string }}%20{{ request.build_absolute_uri }}">
+</a>
+
+<a class= "ion ion-social-googleplus" href='https://plus.google.com/share?url={{ request.build_absolute_uri }}'>
+</a>
+
+
+<a class= "ion ion-social-linkedin linked" href="https://www.linkedin.com/shareArticle?mini=true&url=
+{{ request.build_absolute_uri }}&title={{ share_string }}&source={{ request.build_absolute_uri }}">
+</a>
+
+<a class= "ion ion-social-reddit" href="http://www.reddit.com/submit?url=http://swiftforentrepreneurs.com/
+&title={{ share_string }}"></a>
+
+
+ {% if instance.image %}
+    <img src='{{ instance.image.url }}' class="image-responsive"/>
+    {% endif %}
     <p>{{ instance.content|linebreaks }}</p><br/>
 
 
@@ -47,3 +136,4 @@
 
 </body>
 </html>
+

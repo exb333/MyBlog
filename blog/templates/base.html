@@ -10,7 +10,7 @@
         
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css">
          <link rel="stylesheet" type="text/css" href="{% static 'css/ionicons.min.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/blog_style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/blog-style.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/media_queries.css' %}">
         <link type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
         {% block style %} {% endblock %}
@@ -22,15 +22,15 @@
     
     <body>
         <div class="top-line">
-            <p style="font-size: 60%;">Welcome to my Website</p>
+            <p style="text-align:center; font-size: 60%;">Welcome to my Website</p>
         <div class="container" >
             <nav>
                 <a href="#"><img src="{% static 'img/mylogo1.png' %}" class="logo"/></a>
                 <ul class="mainNav">
                     <li><a href="{% url 'posts:home' %}">Home</a></li>
-                    <li><a href="#">Python</a></li>
-                    <li><a href="{% url 'posts:list' %}">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="{% url 'posts:list' %}">Events</a></li>
+                    <li><a href="#">Feedback</a></li>
                     <li><a href="#">Login</a></li>
                     <li><a href="#">Register</a></li>
                 </ul>
@@ -40,8 +40,10 @@
         
         <div class="container">
             <div class="search-bar">
-                   <input type="text" name='q'/>
+                <form method="get" action="{% url 'posts:list' %}">
+                   <input type="text" placeholder="Search Events" name='q' value="{{ request.GET.q }}"/>
                    <input type="submit" value="Search" class="btn-search">
+                </form>
                </div>
          </div>
 
@@ -58,7 +60,7 @@
 
         {% block other %}
         <section class="blog-categories">
-            <div class="container">
+            <div class="row">
                 <h1> Blog categories </h1>
                 
                 <div class="col-1-2">
@@ -89,7 +91,7 @@
             </div>
                 
         </section>
-        
+
         <section class="register">
             <div class="container">
                 <h2>Please register here!</h2>
@@ -104,7 +106,7 @@
                   Email :<br>
                   <input type="text" name="email" value="">
                   <br><br>
-                  <input class= "btn mybtn" type="submit" value="Submit">
+                  <input class= "btn mybtn" type="submit" value="Register">
                 </form> 
 
             </div>        
@@ -112,7 +114,7 @@
 
         {% endblock %}
 
-            <footer id="footer">
+            <footer>
                 <div class="container">
                     <div class="left-foot">
                         <ul class="footer-nav">

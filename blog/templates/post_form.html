@@ -17,13 +17,13 @@
             width: 850px;
             margin-left:20px
             }
-
-        .mybtn
+/*#16a085 #12806B*/
+        .mybtn1
         {
             width: 150px;
             margin-left:100px;
             margin-top: 40px;
-            background-color: #96281B;
+            background-color: #16a085;
             height: 50px;
             color: #fff;
             border-radius: 20px;
@@ -44,16 +44,22 @@
         .myform label {
             padding: 10px;
         }
+
+        input[type=file]{
+            font-size: initial;
+            padding-left: 15px;
+            margin-top: 40px;
+        }
     </style>
 
 {% endblock %}
 
 
 {% block content %}
-<h1>Form</h1>
-<form method="post" action="" class="myform">{% csrf_token %}
+<h1>{{heading}}</h1>
+<form method="post" action="" class="myform" enctype="multipart/form-data">{% csrf_token %}
     {{ form.as_p }}
-<input type="submit" value="create post" class="mybtn"/>
+<input type="submit" value="create post" class="mybtn1"/>
 </form>
 {% endblock %}
 

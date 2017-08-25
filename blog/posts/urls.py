@@ -9,9 +9,9 @@ urlpatterns = [
     url(r'^$', views.home, name="home"),
     url(r'^posts/$', views.post_list, name="list"),
     url(r'^posts/create/$', views.post_create, name="create"),
-    url(r'^posts/(?P<id>\d+)/$', views.post_detail, name="detail"),
-    url(r'^posts/(?P<id>\d+)/edit/$', views.post_update, name="update"),
-    url(r'^posts/(?P<id>\d+)/delete/$', views.post_delete, name="delete"),
+    url(r'^posts/(?P<slug>[\w-]+)/$', views.post_detail, name="detail"),
+    url(r'^posts/(?P<slug>[\w-]+)/edit/$', views.post_update, name="update"),
+    url(r'^posts/(?P<slug>[\w-]+)/delete/$', views.post_delete, name="delete"),
 ]
 
 if settings.DEBUG:
